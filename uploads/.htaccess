@@ -1,0 +1,11 @@
+# Permitir download de APKs
+<Files *.apk>
+    Header set Content-Type "application/vnd.android.package-archive"
+    Header set Content-Disposition "attachment"
+</Files>
+
+# Prevenir execução de scripts
+<FilesMatch "\.(php|php3|php4|php5|phtml)$">
+    Order Deny,Allow
+    Deny from all
+</FilesMatch>
